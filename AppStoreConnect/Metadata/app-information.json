@@ -2,6 +2,7 @@
   "platform": "iOS",
   "name": "StayCheck IQ",
   "bundleId": "com.staycheckiq.app",
+  "appleId": "6771669918",
   "sku": "STAYCHECK-IQ-IOS-001",
   "primaryLanguage": "en-US",
   "primaryCategory": "Business",

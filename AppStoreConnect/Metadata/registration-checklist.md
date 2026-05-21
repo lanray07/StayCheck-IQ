@@ -2,6 +2,15 @@
 
 Apple currently requires new app records to be created in App Store Connect on the web.
 
+## Completed in App Store Connect
+
+- Registered Apple Developer App ID: `StayCheck IQ` / `com.staycheckiq.app`
+- Created App Store Connect app record: Apple ID `6771669918`
+- Filled Version 1.0 product-page metadata
+- Filled App Information subtitle and categories
+- Set Content Rights: no third-party content
+- Completed Age Rating questionnaire with expected 4+ result
+
 ## New App fields
 
 - Platform: iOS
