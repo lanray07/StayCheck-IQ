@@ -1,0 +1,1 @@
+airbnb,short let,cleaning,turnover,inspection,inventory,property,host,cleaner,report

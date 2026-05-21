@@ -1,0 +1,35 @@
+{
+  "dataCollectionDisclosure": "Draft based on the current local mock build. Confirm against production backend behavior before submission.",
+  "collectsData": true,
+  "dataTypes": [
+    {
+      "type": "User Content",
+      "examples": [
+        "Room photos",
+        "Checklist notes",
+        "Issue descriptions",
+        "Inventory notes",
+        "Generated report text"
+      ],
+      "linkedToUser": false,
+      "usedForTracking": false,
+      "purposes": [
+        "App Functionality"
+      ]
+    },
+    {
+      "type": "Purchases",
+      "examples": [
+        "StoreKit subscription entitlement status"
+      ],
+      "linkedToUser": true,
+      "usedForTracking": false,
+      "purposes": [
+        "App Functionality"
+      ]
+    }
+  ],
+  "tracking": false,
+  "thirdPartyAdvertising": false,
+  "notes": "If production AI uploads photos or notes to a backend, disclose collection, processing, retention, and whether data is linked to the user."
+}

@@ -24,5 +24,6 @@ Use this as a starting point for App Store Connect privacy questions. Confirm wi
 
 ## Required production URLs
 
-- Privacy Policy URL: replace `https://example.com/staycheck-iq/privacy`.
-- Support URL: replace `https://example.com/staycheck-iq/support`.
+- Privacy Policy URL: `https://lanray07.github.io/StayCheck-IQ/privacy.html`.
+- Support URL: `https://lanray07.github.io/StayCheck-IQ/support.html`.
+- Terms URL: `https://lanray07.github.io/StayCheck-IQ/terms.html`.

@@ -1,0 +1,10 @@
+{
+  "contactFirstName": "Lanray",
+  "contactLastName": "Banks",
+  "contactEmail": "lanraybanks@gmail.com",
+  "contactPhone": "REQUIRED_REAL_PHONE_NUMBER",
+  "demoAccountRequired": false,
+  "demoUserName": "",
+  "demoPassword": "",
+  "notes": "No login is required. MockAIService is enabled by default. Suggested flow: complete onboarding, add a property, create a turnover check, add checklist/photo proof, run mock AI scan, add an issue, update inventory, and generate a PDF report."
+}

@@ -1,0 +1,9 @@
+{
+  "usesEncryption": true,
+  "usesAppleStandardEncryptionOnly": true,
+  "usesProprietaryEncryption": false,
+  "usesNonStandardCryptography": false,
+  "availableOnFrenchAppStore": true,
+  "exemptionClaim": "The app uses standard encryption through Apple frameworks and HTTPS/URLSession only. Confirm final export compliance answers in App Store Connect before submission.",
+  "notes": "RemoteAIService is a placeholder HTTPS endpoint. No API keys are stored in the app."
+}

@@ -12,5 +12,8 @@
   "userAccess": "Full Access",
   "version": "1.0",
   "build": "1",
-  "notes": "Replace support_url.txt and privacy_url.txt placeholders with production URLs before submission."
+  "supportUrl": "https://lanray07.github.io/StayCheck-IQ/support.html",
+  "privacyPolicyUrl": "https://lanray07.github.io/StayCheck-IQ/privacy.html",
+  "termsOfUseUrl": "https://lanray07.github.io/StayCheck-IQ/terms.html",
+  "notes": "GitHub Pages must be enabled or deployed for these URLs to resolve publicly."
 }

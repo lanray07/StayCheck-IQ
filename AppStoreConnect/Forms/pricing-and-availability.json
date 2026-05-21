@@ -1,0 +1,22 @@
+{
+  "appPrice": "Free",
+  "availability": "All countries and regions unless the account holder chooses otherwise",
+  "businessModel": "Free download with auto-renewable subscriptions",
+  "subscriptions": [
+    {
+      "productId": "com.staycheckiq.pro.monthly",
+      "referenceName": "Pro Monthly",
+      "pricePlaceholder": "GBP 19.99"
+    },
+    {
+      "productId": "com.staycheckiq.pro.yearly",
+      "referenceName": "Pro Yearly",
+      "pricePlaceholder": "GBP 149.99"
+    },
+    {
+      "productId": "com.staycheckiq.business.monthly",
+      "referenceName": "Business Monthly",
+      "pricePlaceholder": "GBP 79.99"
+    }
+  ]
+}

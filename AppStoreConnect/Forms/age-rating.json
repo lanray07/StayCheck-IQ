@@ -1,0 +1,15 @@
+{
+  "expectedRating": "4+",
+  "violenceCartoonOrFantasy": "None",
+  "violenceRealistic": "None",
+  "sexualContentOrNudity": "None",
+  "profanityOrCrudeHumor": "None",
+  "alcoholTobaccoDrugReferences": "None",
+  "matureOrSuggestiveThemes": "None",
+  "horrorOrFearThemes": "None",
+  "medicalOrTreatmentInformation": "None",
+  "gambling": "None",
+  "unrestrictedWebAccess": false,
+  "userGeneratedContent": false,
+  "notes": "Business/productivity app for property turnover inspection records. Confirm answers in App Store Connect questionnaire."
+}

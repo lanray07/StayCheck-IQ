@@ -1,0 +1,1 @@
+Turn short-let cleanings into guest-ready PDF reports with room checklists, photo evidence, issue tracking, inventory reminders, and mock AI scans.

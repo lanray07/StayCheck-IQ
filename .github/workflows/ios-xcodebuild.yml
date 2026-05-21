@@ -1,0 +1,34 @@
+name: iOS Xcode Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build StayCheck IQ
+    runs-on: macos-15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: |
+          sudo xcode-select -s /Applications/Xcode.app
+          xcodebuild -version
+
+      - name: List schemes
+        run: xcodebuild -project "StayCheckIQ.xcodeproj" -list
+
+      - name: Build for iOS Simulator
+        run: |
+          xcodebuild \
+            -project "StayCheckIQ.xcodeproj" \
+            -scheme "StayCheck IQ" \
+            -configuration Debug \
+            -destination "generic/platform=iOS Simulator" \
+            CODE_SIGNING_ALLOWED=NO \
+            clean build

@@ -25,8 +25,9 @@ Apple currently requires new app records to be created in App Store Connect on t
 - Description: see `en-US/description.txt`
 - Keywords: see `en-US/keywords.txt`
 - Review notes: see `en-US/review_notes.txt`
-- Support URL: replace placeholder in `en-US/support_url.txt`
-- Privacy URL: replace placeholder in `en-US/privacy_url.txt`
+- Support URL: `https://lanray07.github.io/StayCheck-IQ/support.html`
+- Privacy URL: `https://lanray07.github.io/StayCheck-IQ/privacy.html`
+- Terms URL: `https://lanray07.github.io/StayCheck-IQ/terms.html`
 
 ## Screenshots
 
@@ -39,8 +40,13 @@ Create one subscription group named `StayCheck IQ Plans`, then create the produc
 
 ## Before Submit for Review
 
-- Replace placeholder support and privacy URLs.
+- Enable GitHub Pages with GitHub Actions as the source, or confirm the Pages workflow deploys successfully.
 - Create the matching StoreKit products in App Store Connect.
 - Upload a signed build from Xcode on macOS.
+- Replace `REQUIRED_REAL_PHONE_NUMBER` in `AppStoreConnect/Forms/app-review-information.json`.
+- Add GitHub repository secrets for metadata upload if using fastlane:
+  - `APP_STORE_CONNECT_API_KEY_ID`
+  - `APP_STORE_CONNECT_ISSUER_ID`
+  - `APP_STORE_CONNECT_API_PRIVATE_KEY`
 - Confirm export compliance and encryption answers.
 - Confirm app privacy answers match the production backend behavior.

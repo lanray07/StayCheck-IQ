@@ -1,0 +1,11 @@
+{
+  "cannotBeCompletedByCodexWithoutAccountAccess": [
+    "Apple Developer account agreements, tax, and banking status",
+    "Bundle ID registration in Certificates, Identifiers & Profiles if it does not already exist",
+    "New App creation in App Store Connect web UI",
+    "Real App Review contact phone number",
+    "Production support/privacy domain confirmation if GitHub Pages is not acceptable",
+    "App Store Connect API key secrets for GitHub Actions metadata upload",
+    "Code signing certificates/profiles for archive and TestFlight upload"
+  ]
+}
