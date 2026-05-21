@@ -11,6 +11,8 @@ jobs:
   build:
     name: Build StayCheck IQ
     runs-on: macos-15
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,11 +26,33 @@ jobs:
         run: xcodebuild -project "StayCheckIQ.xcodeproj" -list
 
       - name: Build for iOS Simulator
+        id: xcodebuild
+        shell: bash
         run: |
+          set +e
           xcodebuild \
             -project "StayCheckIQ.xcodeproj" \
             -scheme "StayCheck IQ" \
             -configuration Debug \
             -destination "generic/platform=iOS Simulator" \
             CODE_SIGNING_ALLOWED=NO \
-            clean build
+            clean build 2>&1 | tee xcodebuild.log
+          status=${PIPESTATUS[0]}
+          {
+            echo "### xcodebuild result"
+            echo
+            echo "Exit code: \`$status\`"
+            echo
+            echo "### Last 200 log lines"
+            echo '```text'
+            tail -n 200 xcodebuild.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          exit "$status"
+
+      - name: Upload xcodebuild log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xcodebuild-log
+          path: xcodebuild.log
