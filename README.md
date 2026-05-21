@@ -1,0 +1,31 @@
+# StayCheck IQ
+
+StayCheck IQ is a SwiftUI iOS app for Airbnb and short-let turnover inspections. It includes local SwiftData persistence, mock AI room scans enabled by default, StoreKit 2 subscription scaffolding, photo proof, inventory tracking, issue reports, guest-ready scoring, local reminders, native PDF generation, and sharing.
+
+## Open in Xcode
+
+Open `StayCheckIQ.xcodeproj`, select the `StayCheck IQ` scheme, and run on an iOS 17+ simulator or device.
+
+## Mock AI and backend
+
+The app injects `MockAIService` by default in `StayCheckIQApp.swift`. `RemoteAIService` is scaffolded for:
+
+```text
+POST https://YOUR_BACKEND_URL.com/staycheck-iq
+```
+
+Never store API keys in the iOS app. Put provider credentials in your backend and have the app call only your secure endpoint.
+
+## StoreKit product IDs
+
+Configured placeholders:
+
+- `com.staycheckiq.pro.monthly`
+- `com.staycheckiq.pro.yearly`
+- `com.staycheckiq.business.monthly`
+
+Create matching products in App Store Connect or a local StoreKit configuration file before testing real purchases.
+
+## Notes
+
+This workspace was generated on Windows, where `xcodebuild` and `xcrun` are not installed. Static validation was performed here; perform the final compile/run pass in Xcode on macOS.

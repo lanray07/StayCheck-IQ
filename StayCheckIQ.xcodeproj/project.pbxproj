@@ -1,0 +1,425 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		010101010101010101010101 /* StayCheckIQApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010101010101010101010102 /* StayCheckIQApp.swift */; };
+		010101010101010101010103 /* StayCheckModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010101010101010101010104 /* StayCheckModels.swift */; };
+		010101010101010101010105 /* StayCheckServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010101010101010101010106 /* StayCheckServices.swift */; };
+		010101010101010101010107 /* StayCheckUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010101010101010101010108 /* StayCheckUtilities.swift */; };
+		010101010101010101010109 /* StayCheckComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01010101010101010101010A /* StayCheckComponents.swift */; };
+		01010101010101010101010B /* StayCheckViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01010101010101010101010C /* StayCheckViewModels.swift */; };
+		01010101010101010101010D /* StayCheckViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01010101010101010101010E /* StayCheckViews.swift */; };
+		01010101010101010101010F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 010101010101010101010110 /* Assets.xcassets */; };
+		010101010101010101010111 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 010101010101010101010112 /* PrivacyInfo.xcprivacy */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		010101010101010101010113 /* StayCheck IQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StayCheck IQ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		010101010101010101010102 /* StayCheckIQApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayCheckIQApp.swift; sourceTree = "<group>"; };
+		010101010101010101010104 /* StayCheckModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayCheckModels.swift; sourceTree = "<group>"; };
+		010101010101010101010106 /* StayCheckServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayCheckServices.swift; sourceTree = "<group>"; };
+		010101010101010101010108 /* StayCheckUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayCheckUtilities.swift; sourceTree = "<group>"; };
+		01010101010101010101010A /* StayCheckComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayCheckComponents.swift; sourceTree = "<group>"; };
+		01010101010101010101010C /* StayCheckViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayCheckViewModels.swift; sourceTree = "<group>"; };
+		01010101010101010101010E /* StayCheckViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayCheckViews.swift; sourceTree = "<group>"; };
+		010101010101010101010110 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		010101010101010101010112 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		010101010101010101010114 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		010101010101010101010115 = {
+			isa = PBXGroup;
+			children = (
+				010101010101010101010116 /* StayCheckIQ */,
+				010101010101010101010117 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		010101010101010101010117 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				010101010101010101010113 /* StayCheck IQ.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		010101010101010101010116 /* StayCheckIQ */ = {
+			isa = PBXGroup;
+			children = (
+				010101010101010101010102 /* StayCheckIQApp.swift */,
+				010101010101010101010118 /* Models */,
+				010101010101010101010119 /* Views */,
+				01010101010101010101011A /* ViewModels */,
+				01010101010101010101011B /* Services */,
+				01010101010101010101011C /* Components */,
+				01010101010101010101011D /* Utilities */,
+				01010101010101010101011E /* Resources */,
+			);
+			path = StayCheckIQ;
+			sourceTree = "<group>";
+		};
+		010101010101010101010118 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				010101010101010101010104 /* StayCheckModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		010101010101010101010119 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01010101010101010101010E /* StayCheckViews.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01010101010101010101011A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				01010101010101010101010C /* StayCheckViewModels.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		01010101010101010101011B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				010101010101010101010106 /* StayCheckServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		01010101010101010101011C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				01010101010101010101010A /* StayCheckComponents.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		01010101010101010101011D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				010101010101010101010108 /* StayCheckUtilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		01010101010101010101011E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				010101010101010101010110 /* Assets.xcassets */,
+				010101010101010101010112 /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01010101010101010101011F /* StayCheck IQ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 010101010101010101010120 /* Build configuration list for PBXNativeTarget "StayCheck IQ" */;
+			buildPhases = (
+				010101010101010101010121 /* Sources */,
+				010101010101010101010114 /* Frameworks */,
+				010101010101010101010122 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "StayCheck IQ";
+			productName = "StayCheck IQ";
+			productReference = 010101010101010101010113 /* StayCheck IQ.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		010101010101010101010123 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					01010101010101010101011F = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 010101010101010101010124 /* Build configuration list for PBXProject "StayCheckIQ" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 010101010101010101010115;
+			productRefGroup = 010101010101010101010117 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01010101010101010101011F /* StayCheck IQ */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		010101010101010101010122 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01010101010101010101010F /* Assets.xcassets in Resources */,
+				010101010101010101010111 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		010101010101010101010121 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				010101010101010101010101 /* StayCheckIQApp.swift in Sources */,
+				010101010101010101010103 /* StayCheckModels.swift in Sources */,
+				010101010101010101010105 /* StayCheckServices.swift in Sources */,
+				010101010101010101010107 /* StayCheckUtilities.swift in Sources */,
+				010101010101010101010109 /* StayCheckComponents.swift in Sources */,
+				01010101010101010101010B /* StayCheckViewModels.swift in Sources */,
+				01010101010101010101010D /* StayCheckViews.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		010101010101010101010125 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		010101010101010101010126 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		010101010101010101010127 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "StayCheck IQ";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSCameraUsageDescription = "StayCheck IQ uses the camera to capture turnover photo proof and issue evidence.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "StayCheck IQ can save generated report evidence to your photo library when you choose to export it.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "StayCheck IQ lets you choose room photos from your library for turnover checks.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.staycheckiq.app;
+				PRODUCT_NAME = "StayCheck IQ";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		010101010101010101010128 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "StayCheck IQ";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSCameraUsageDescription = "StayCheck IQ uses the camera to capture turnover photo proof and issue evidence.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "StayCheck IQ can save generated report evidence to your photo library when you choose to export it.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "StayCheck IQ lets you choose room photos from your library for turnover checks.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.staycheckiq.app;
+				PRODUCT_NAME = "StayCheck IQ";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		010101010101010101010124 /* Build configuration list for PBXProject "StayCheckIQ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				010101010101010101010125 /* Debug */,
+				010101010101010101010126 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		010101010101010101010120 /* Build configuration list for PBXNativeTarget "StayCheck IQ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				010101010101010101010127 /* Debug */,
+				010101010101010101010128 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 010101010101010101010123 /* Project object */;
+}
