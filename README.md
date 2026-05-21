@@ -44,6 +44,7 @@ The repo also includes:
 - GitHub Pages support site in `docs/`
 - GitHub Actions Xcode simulator build in `.github/workflows/ios-xcodebuild.yml`
 - Manual fastlane metadata upload workflow in `.github/workflows/appstore-metadata.yml`
+- Manual App Review submission workflow in `.github/workflows/appstore-submit-review.yml`
 - Filled App Store form drafts in `AppStoreConnect/Forms/`
 - Fastlane metadata mirror in `fastlane/metadata/`
 

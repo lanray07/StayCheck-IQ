@@ -48,5 +48,7 @@ Create one subscription group named `StayCheck IQ Plans`, then create the produc
   - `APP_STORE_CONNECT_API_KEY_ID`
   - `APP_STORE_CONNECT_ISSUER_ID`
   - `APP_STORE_CONNECT_API_PRIVATE_KEY`
+  - `APP_REVIEW_CONTACT_PHONE`
 - Confirm export compliance and encryption answers.
 - Confirm app privacy answers match the production backend behavior.
+- When the signed build is uploaded and attached to version 1.0, run the `Submit App Store Review` workflow manually.

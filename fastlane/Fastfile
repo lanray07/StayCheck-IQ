@@ -31,4 +31,36 @@ platform :ios do
       }
     )
   end
+
+  desc "Submit the existing App Store Connect version for review after the signed build and required account tasks are complete"
+  lane :submit_for_review do
+    api_key = app_store_connect_api_key(
+      key_id: ENV.fetch("APP_STORE_CONNECT_API_KEY_ID"),
+      issuer_id: ENV.fetch("APP_STORE_CONNECT_ISSUER_ID"),
+      key_content: ENV.fetch("APP_STORE_CONNECT_API_PRIVATE_KEY"),
+      is_key_content_base64: false
+    )
+
+    deliver(
+      api_key: api_key,
+      app_identifier: "com.staycheckiq.app",
+      app_version: "1.0",
+      metadata_path: "fastlane/metadata",
+      screenshots_path: "fastlane/screenshots",
+      skip_binary_upload: true,
+      submit_for_review: true,
+      automatic_release: false,
+      force: true,
+      overwrite_screenshots: true,
+      precheck_include_in_app_purchases: false,
+      submission_information: {
+        add_id_info_uses_idfa: false,
+        content_rights_contains_third_party_content: false,
+        export_compliance_uses_encryption: true,
+        export_compliance_is_exempt: true,
+        export_compliance_contains_proprietary_cryptography: false,
+        export_compliance_contains_third_party_cryptography: false
+      }
+    )
+  end
 end
