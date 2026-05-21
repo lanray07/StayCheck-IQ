@@ -1,35 +1,9 @@
 {
-  "dataCollectionDisclosure": "Draft based on the current local mock build. Confirm against production backend behavior before submission.",
-  "collectsData": true,
-  "dataTypes": [
-    {
-      "type": "User Content",
-      "examples": [
-        "Room photos",
-        "Checklist notes",
-        "Issue descriptions",
-        "Inventory notes",
-        "Generated report text"
-      ],
-      "linkedToUser": false,
-      "usedForTracking": false,
-      "purposes": [
-        "App Functionality"
-      ]
-    },
-    {
-      "type": "Purchases",
-      "examples": [
-        "StoreKit subscription entitlement status"
-      ],
-      "linkedToUser": true,
-      "usedForTracking": false,
-      "purposes": [
-        "App Functionality"
-      ]
-    }
-  ],
+  "dataCollectionDisclosure": "Submitted for the current local mock build. Apple defines collection as transmitting data off-device in a way that allows access beyond real-time servicing. Current mock mode stores inspection content locally with SwiftData and does not transmit it.",
+  "collectsData": false,
+  "dataTypes": [],
   "tracking": false,
   "thirdPartyAdvertising": false,
-  "notes": "If production AI uploads photos or notes to a backend, disclose collection, processing, retention, and whether data is linked to the user."
+  "submittedToAppStoreConnect": true,
+  "notes": "If production AI uploads photos or notes to a backend, update App Store privacy answers before submission and disclose collection, processing, retention, and whether data is linked to the user."
 }

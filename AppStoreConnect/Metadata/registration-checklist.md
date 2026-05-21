@@ -10,6 +10,8 @@ Apple currently requires new app records to be created in App Store Connect on t
 - Filled App Information subtitle and categories
 - Set Content Rights: no third-party content
 - Completed Age Rating questionnaire with expected 4+ result
+- Published App Privacy response for the current local mock build: no data collected
+- Set app price to free and availability to all 175 countries/regions
 
 ## New App fields
 
@@ -51,9 +53,9 @@ Create one subscription group named `StayCheck IQ Plans`, then create the produc
 
 - Confirm GitHub Pages is live at `https://lanray07.github.io/StayCheck-IQ/`.
 - Create the matching StoreKit products in App Store Connect.
-- Upload a signed build from Xcode on macOS.
+- Upload a signed build from Xcode on macOS or run the `App Store Build Upload` GitHub workflow after adding required secrets.
 - Replace `REQUIRED_REAL_PHONE_NUMBER` in `AppStoreConnect/Forms/app-review-information.json`.
-- Add GitHub repository secrets for metadata upload if using fastlane:
+- Add GitHub repository secrets for metadata/build upload if using GitHub Actions:
   - `APP_STORE_CONNECT_API_KEY_ID`
   - `APP_STORE_CONNECT_ISSUER_ID`
   - `APP_STORE_CONNECT_API_PRIVATE_KEY`

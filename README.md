@@ -44,10 +44,11 @@ The repo also includes:
 - GitHub Pages support site in `docs/`
 - GitHub Actions Xcode simulator build in `.github/workflows/ios-xcodebuild.yml`
 - Manual fastlane metadata upload workflow in `.github/workflows/appstore-metadata.yml`
+- Manual signed App Store archive/upload workflow in `.github/workflows/appstore-build-upload.yml`
 - Manual App Review submission workflow in `.github/workflows/appstore-submit-review.yml`
 - Filled App Store form drafts in `AppStoreConnect/Forms/`
 - Fastlane metadata mirror in `fastlane/metadata/`
 
 The support, privacy, and terms pages are published from the `gh-pages` branch at `https://lanray07.github.io/StayCheck-IQ/`.
 
-Before submitting to App Review, replace `REQUIRED_REAL_PHONE_NUMBER` in `AppStoreConnect/Forms/app-review-information.json` with a real App Review contact number, create the App Store Connect app record, create the subscription products, and add App Store Connect API secrets to GitHub if you want metadata uploads from Actions.
+Before submitting to App Review, replace `REQUIRED_REAL_PHONE_NUMBER` in `AppStoreConnect/Forms/app-review-information.json` with a real App Review contact number, create the subscription products, and add App Store Connect API secrets to GitHub if you want metadata/build uploads from Actions.
