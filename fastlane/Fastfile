@@ -24,8 +24,8 @@ platform :ios do
       submission_information: {
         add_id_info_uses_idfa: false,
         content_rights_contains_third_party_content: false,
-        export_compliance_uses_encryption: true,
-        export_compliance_is_exempt: true,
+        export_compliance_uses_encryption: false,
+        export_compliance_is_exempt: false,
         export_compliance_contains_proprietary_cryptography: false,
         export_compliance_contains_third_party_cryptography: false
       }
@@ -56,8 +56,8 @@ platform :ios do
       submission_information: {
         add_id_info_uses_idfa: false,
         content_rights_contains_third_party_content: false,
-        export_compliance_uses_encryption: true,
-        export_compliance_is_exempt: true,
+        export_compliance_uses_encryption: false,
+        export_compliance_is_exempt: false,
         export_compliance_contains_proprietary_cryptography: false,
         export_compliance_contains_third_party_cryptography: false
       }

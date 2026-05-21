@@ -17,6 +17,17 @@
           "05-pdf-reports.png"
         ]
       },
+      "iphone65": {
+        "display": "6.5-inch",
+        "size": "1242x2688",
+        "files": [
+          "01-dashboard.png",
+          "02-checklist.png",
+          "03-ai-room-scan.png",
+          "04-inventory.png",
+          "05-pdf-reports.png"
+        ]
+      },
       "ipad13": {
         "display": "13-inch",
         "size": "2064x2752",

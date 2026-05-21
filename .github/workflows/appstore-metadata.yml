@@ -2,11 +2,13 @@ name: App Store Metadata Upload
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
 
 jobs:
   upload_metadata:
     name: Upload metadata with fastlane
-    runs-on: macos-15
+    runs-on: macos-26
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
