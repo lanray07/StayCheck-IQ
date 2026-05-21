@@ -1,0 +1,16 @@
+{
+  "platform": "iOS",
+  "name": "StayCheck IQ",
+  "bundleId": "com.staycheckiq.app",
+  "sku": "STAYCHECK-IQ-IOS-001",
+  "primaryLanguage": "en-US",
+  "primaryCategory": "Business",
+  "secondaryCategory": "Productivity",
+  "contentRights": "The app does not contain, show, or access third-party content.",
+  "ageRatingRecommendation": "4+",
+  "copyright": "2026 StayCheck IQ",
+  "userAccess": "Full Access",
+  "version": "1.0",
+  "build": "1",
+  "notes": "Replace support_url.txt and privacy_url.txt placeholders with production URLs before submission."
+}

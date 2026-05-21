@@ -1,0 +1,36 @@
+{
+  "appIcon": {
+    "path": "AppStoreConnect/AppStoreAssets/AppIcon/staycheck-iq-appstore-1024.png",
+    "size": "1024x1024",
+    "format": "png"
+  },
+  "screenshots": {
+    "en-US": {
+      "iphone69": {
+        "display": "6.9-inch",
+        "size": "1320x2868",
+        "files": [
+          "01-dashboard.png",
+          "02-checklist.png",
+          "03-ai-room-scan.png",
+          "04-inventory.png",
+          "05-pdf-reports.png"
+        ]
+      },
+      "ipad13": {
+        "display": "13-inch",
+        "size": "2064x2752",
+        "files": [
+          "01-dashboard.png",
+          "02-checklist.png",
+          "03-ai-room-scan.png",
+          "04-inventory.png",
+          "05-pdf-reports.png"
+        ]
+      }
+    }
+  },
+  "inAppPurchases": {
+    "subscriptionReviewScreenshot": "AppStoreConnect/AppStoreAssets/InAppPurchases/subscription-review-paywall.png"
+  }
+}

@@ -1,0 +1,14 @@
+StayCheck IQ is currently configured with local SwiftData storage and MockAIService enabled by default. No login is required for review.
+
+Suggested review flow:
+1. Complete onboarding and accept the AI disclaimer.
+2. Add a property profile.
+3. Create a turnover check.
+4. Complete checklist items, add photo proof, run the mock AI room scan, create an issue, update inventory, and generate/share a PDF report.
+
+Subscriptions are scaffolded with StoreKit 2 placeholders:
+- com.staycheckiq.pro.monthly
+- com.staycheckiq.pro.yearly
+- com.staycheckiq.business.monthly
+
+The remote AI endpoint is a placeholder and no API keys are stored in the app.

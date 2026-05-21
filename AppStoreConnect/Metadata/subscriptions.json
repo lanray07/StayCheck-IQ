@@ -1,0 +1,34 @@
+{
+  "subscriptionGroups": [
+    {
+      "referenceName": "StayCheck IQ Plans",
+      "products": [
+        {
+          "productId": "com.staycheckiq.pro.monthly",
+          "referenceName": "Pro Monthly",
+          "displayName": "StayCheck IQ Pro Monthly",
+          "pricePlaceholder": "GBP 19.99",
+          "duration": "1 month",
+          "description": "Up to 5 properties, unlimited turnover checks, AI room scans, PDF exports, inventory reminders, cleaner checklists, and guest-ready scoring."
+        },
+        {
+          "productId": "com.staycheckiq.pro.yearly",
+          "referenceName": "Pro Yearly",
+          "displayName": "StayCheck IQ Pro Yearly",
+          "pricePlaceholder": "GBP 149.99",
+          "duration": "1 year",
+          "description": "Annual Pro access for up to 5 properties with unlimited checks, AI room scans, PDF exports, inventory reminders, and cleaner accountability reports."
+        },
+        {
+          "productId": "com.staycheckiq.business.monthly",
+          "referenceName": "Business Monthly",
+          "displayName": "StayCheck IQ Business Monthly",
+          "pricePlaceholder": "GBP 79.99",
+          "duration": "1 month",
+          "description": "Unlimited properties, team workflow placeholder, custom branding, advanced reports, and a multi-property dashboard."
+        }
+      ]
+    }
+  ],
+  "reviewScreenshot": "AppStoreConnect/AppStoreAssets/InAppPurchases/subscription-review-paywall.png"
+}

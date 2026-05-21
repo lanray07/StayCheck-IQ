@@ -29,3 +29,14 @@ Create matching products in App Store Connect or a local StoreKit configuration 
 ## Notes
 
 This workspace was generated on Windows, where `xcodebuild` and `xcrun` are not installed. Static validation was performed here; perform the final compile/run pass in Xcode on macOS.
+
+## App Store Connect assets
+
+Submission assets and metadata drafts live in `AppStoreConnect/`:
+
+- App icon: `AppStoreConnect/AppStoreAssets/AppIcon/staycheck-iq-appstore-1024.png`
+- iPhone 6.9-inch screenshots: `AppStoreConnect/AppStoreAssets/Screenshots/en-US/iPhone-6.9/`
+- iPad 13-inch screenshots: `AppStoreConnect/AppStoreAssets/Screenshots/en-US/iPad-13/`
+- Metadata and registration checklist: `AppStoreConnect/Metadata/`
+
+Replace the placeholder support and privacy URLs before submitting to App Review.

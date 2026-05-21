@@ -1,0 +1,17 @@
+StayCheck IQ helps hosts, cleaners, co-hosts, serviced accommodation operators, and property managers complete faster short-let turnover checks.
+
+Create property profiles, run room-by-room cleaner checklists, capture before and after photo proof, track damage or maintenance issues, monitor inventory levels, and generate guest-ready PDF reports.
+
+Key features:
+
+- Turnover dashboard for today's cleanings, open issues, recent reports, and properties
+- Property profiles with cleaner, check-in, check-out, bedroom, bathroom, and notes fields
+- Guest-ready checklists for kitchen, bathroom, bedroom, living room, hallway, exterior, linen, inventory, safety items, and custom areas
+- Photo proof with room labels, notes, before/after status, and issue flags
+- Mock AI room scans for cleanliness, damage, missing item, restock, maintenance, and guest-readiness suggestions
+- Damage and maintenance reports with category, severity, action, status, and photos
+- Inventory tracker for towels, bedding, toilet paper, soap, shampoo, tea and coffee, cleaning products, batteries, keys, remotes, and kitchen items
+- Guest-ready scoring based on checklist completion, open issues, photo evidence, inventory status, and cleaning status
+- Native PDF turnover reports with property details, cleaner name, checklist, photo evidence, open issues, inventory notes, score, signature placeholder, and disclaimer
+
+Important: AI findings must be reviewed. StayCheck IQ is not a legal property inspection, not safety certification, and not a replacement for qualified maintenance professionals. Urgent safety concerns should be checked immediately.
