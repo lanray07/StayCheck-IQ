@@ -27,5 +27,5 @@ in `app-review-information.json` before submission.
 ## GitHub Actions
 
 - `.github/workflows/ios-xcodebuild.yml` runs the Xcode simulator build on GitHub-hosted macOS.
-- `.github/workflows/pages.yml` publishes the support/privacy/terms pages from `docs/`.
+- The `gh-pages` branch publishes the support/privacy/terms pages from `docs/`.
 - `.github/workflows/appstore-metadata.yml` can upload metadata with fastlane after App Store Connect API secrets are added.

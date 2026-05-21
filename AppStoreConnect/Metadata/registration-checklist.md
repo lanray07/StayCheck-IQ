@@ -40,7 +40,7 @@ Create one subscription group named `StayCheck IQ Plans`, then create the produc
 
 ## Before Submit for Review
 
-- Enable GitHub Pages with GitHub Actions as the source, or confirm the Pages workflow deploys successfully.
+- Confirm GitHub Pages is live at `https://lanray07.github.io/StayCheck-IQ/`.
 - Create the matching StoreKit products in App Store Connect.
 - Upload a signed build from Xcode on macOS.
 - Replace `REQUIRED_REAL_PHONE_NUMBER` in `AppStoreConnect/Forms/app-review-information.json`.
