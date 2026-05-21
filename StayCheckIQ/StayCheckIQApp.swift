@@ -33,7 +33,7 @@ struct StayCheckIQApp: App {
             RootView(hasCompletedOnboarding: $hasCompletedOnboarding)
                 .modelContainer(modelContainer)
                 .environmentObject(services)
-                .tint(.stayTeal)
+                .tint(Color.stayTeal)
                 .task {
                     services.subscriptionService.startTransactionListener()
                     await services.subscriptionService.loadProducts()

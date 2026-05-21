@@ -956,9 +956,9 @@ struct AIRoomScanView: View {
                             Text(issue.description)
                                 .font(.subheadline)
                                 .foregroundStyle(.secondary)
-                            Label(issue.suggestedAction, systemImage: "arrow.turn.down.right")
-                                .font(.caption)
-                                .foregroundStyle(.stayTeal)
+                    Label(issue.suggestedAction, systemImage: "arrow.turn.down.right")
+                        .font(.caption)
+                        .foregroundStyle(Color.stayTeal)
                         }
                         .padding(14)
                         .background(.background, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
@@ -1682,9 +1682,9 @@ private struct DashboardActionCard<Destination: View>: View {
         } label: {
             VStack(alignment: .leading, spacing: 12) {
                 HStack {
-                    Image(systemName: icon)
-                        .font(.title2)
-                        .foregroundStyle(.stayTeal)
+            Image(systemName: icon)
+                .font(.title2)
+                .foregroundStyle(Color.stayTeal)
                     Spacer()
                     Text(value)
                         .font(.title3.bold())
@@ -1758,7 +1758,7 @@ private struct QuickActionLabel: View {
     var body: some View {
         HStack {
             Image(systemName: icon)
-                .foregroundStyle(.stayTeal)
+                .foregroundStyle(Color.stayTeal)
             Text(title)
                 .font(.headline)
             Spacer()

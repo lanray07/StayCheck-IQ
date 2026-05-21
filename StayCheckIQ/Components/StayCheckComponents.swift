@@ -21,7 +21,7 @@ struct PropertyCard: View {
                 }
                 Spacer()
                 Image(systemName: "house.and.flag.fill")
-                    .foregroundStyle(.stayTeal)
+                    .foregroundStyle(Color.stayTeal)
                     .font(.title3)
             }
 
@@ -78,7 +78,7 @@ struct TurnoverCheckCard: View {
             .foregroundStyle(.secondary)
 
             ProgressView(value: Double(check.guestReadyScore), total: 100)
-                .tint(.stayTeal)
+                .tint(Color.stayTeal)
         }
         .padding(16)
         .background(.background, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
@@ -112,7 +112,7 @@ struct ChecklistRow: View {
                 if item.photoRequired {
                     Label("Photo proof recommended", systemImage: "camera.fill")
                         .font(.caption)
-                        .foregroundStyle(.stayTeal)
+                        .foregroundStyle(Color.stayTeal)
                 }
             }
             .padding(.top, 8)
@@ -125,7 +125,7 @@ struct ChecklistRow: View {
                     }
                 } label: {
                     Image(systemName: item.completed ? "checkmark.circle.fill" : "circle")
-                        .foregroundStyle(item.completed ? .stayTeal : .secondary)
+                        .foregroundStyle(item.completed ? Color.stayTeal : Color.secondary)
                         .font(.title3)
                 }
                 .buttonStyle(.plain)
@@ -154,18 +154,16 @@ struct RoomPhotoCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Group {
+            ZStack {
                 if let data = photo.imageData, let image = UIImage(data: data) {
                     Image(uiImage: image)
                         .resizable()
                         .scaledToFill()
                 } else {
-                    ZStack {
-                        Rectangle().fill(Color.staySoftTeal)
-                        Image(systemName: "photo")
-                            .font(.largeTitle)
-                            .foregroundStyle(.stayTeal)
-                    }
+                    Rectangle().fill(Color.staySoftTeal)
+                    Image(systemName: "photo")
+                        .font(.largeTitle)
+                        .foregroundStyle(Color.stayTeal)
                 }
             }
             .frame(height: 150)
@@ -182,7 +180,7 @@ struct RoomPhotoCard: View {
                 Spacer()
                 if photo.flagIssue {
                     Image(systemName: "exclamationmark.triangle.fill")
-                        .foregroundStyle(.stayAmber)
+                        .foregroundStyle(Color.stayAmber)
                 }
             }
 
@@ -228,7 +226,7 @@ struct StayIssueCard: View {
             if !issue.suggestedAction.isEmpty {
                 Label(issue.suggestedAction, systemImage: "wand.and.stars")
                     .font(.caption)
-                    .foregroundStyle(.stayTeal)
+                    .foregroundStyle(Color.stayTeal)
             }
 
             HStack {
@@ -387,7 +385,7 @@ struct ReportPreviewView: View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
                 Image(systemName: "doc.richtext")
-                    .foregroundStyle(.stayTeal)
+                    .foregroundStyle(Color.stayTeal)
                 VStack(alignment: .leading, spacing: 3) {
                     Text(report.title)
                         .font(.headline)
@@ -492,7 +490,7 @@ struct UpgradeBanner: View {
         HStack(alignment: .center, spacing: 12) {
             Image(systemName: "sparkles")
                 .font(.title2)
-                .foregroundStyle(.stayTeal)
+                .foregroundStyle(Color.stayTeal)
             VStack(alignment: .leading, spacing: 3) {
                 Text(title)
                     .font(.headline)
@@ -518,7 +516,7 @@ struct EmptyStateView: View {
         VStack(spacing: 12) {
             Image(systemName: systemImage)
                 .font(.system(size: 42))
-                .foregroundStyle(.stayTeal)
+                .foregroundStyle(Color.stayTeal)
             Text(title)
                 .font(.headline)
             Text(message)
