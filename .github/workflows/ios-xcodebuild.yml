@@ -7,6 +7,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     name: Build StayCheck IQ
@@ -56,3 +59,18 @@ jobs:
         with:
           name: xcodebuild-log
           path: xcodebuild.log
+
+      - name: Publish failure log branch
+        if: failure()
+        shell: bash
+        run: |
+          cp xcodebuild.log "/tmp/xcodebuild-${GITHUB_RUN_ID}.log"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan ci-logs-worktree
+          git rm -rf .
+          mkdir -p ci-logs
+          cp "/tmp/xcodebuild-${GITHUB_RUN_ID}.log" "ci-logs/xcodebuild-${GITHUB_RUN_ID}.log"
+          git add ci-logs
+          git commit -m "Capture xcodebuild failure log ${GITHUB_RUN_ID} [skip ci]"
+          git push --force origin HEAD:ci-logs
