@@ -1,8 +1,6 @@
 name: Submit App Store Review
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 jobs:
