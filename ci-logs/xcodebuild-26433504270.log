@@ -1,0 +1,238 @@
+Command line invocation:
+    /Applications/Xcode_26.4.1.app/Contents/Developer/usr/bin/xcodebuild -project StayCheckIQ.xcodeproj -scheme "StayCheck IQ" -configuration Debug -destination "generic/platform=iOS Simulator" CODE_SIGNING_ALLOWED=NO clean build
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+** CLEAN SUCCEEDED **
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'StayCheck IQ' in project 'StayCheckIQ' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode_26.4.1.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ/Resources/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode_26.4.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode_26.4.1.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode_26.4.1.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode_26.4.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode_26.4.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: cbf6960814805965b6b81a0fb47e1239
+Build description path: /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/XCBuildData/cbf6960814805965b6b81a0fb47e1239.xcbuilddata
+ClangStatCache /Applications/Xcode_26.4.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.4.1.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-688ef53f1462e2c8f657fdc38a81448f893e4a944e4cdd9af1f5077e1341bc52.sdkstatcache
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ.xcodeproj
+    /Applications/Xcode_26.4.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.4.1.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -o /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-688ef53f1462e2c8f657fdc38a81448f893e4a944e4cdd9af1f5077e1341bc52.sdkstatcache
+
+CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ.xcodeproj
+    builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products
+
+CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ.xcodeproj
+    builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex
+
+CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ.xcodeproj
+    builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheckIQ-c44772a21a36d197e552230697ce63f3-VFS-iphonesimulator/all-product-headers.yaml
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ.xcodeproj
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheckIQ-c44772a21a36d197e552230697ce63f3-VFS-iphonesimulator/all-product-headers.yaml
+
+CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ.xcodeproj
+    builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/ExplicitPrecompiledModules
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ.xcodeproj
+    builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ.xcodeproj
+    builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/empty-StayCheck\ IQ.plist (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/empty-StayCheck\ IQ.plist
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ.hmap (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ.hmap
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ.DependencyStaticMetadataFileList (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ.DependencyMetadataFileList (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-project-headers.hmap (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-project-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-own-target-headers.hmap (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-generated-files.hmap (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-generated-files.hmap
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-all-target-headers.hmap (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-all-non-framework-target-headers.hmap (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-DebugDylibPath-normal-x86_64.txt (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-DebugDylibPath-normal-x86_64.txt
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-DebugDylibPath-normal-arm64.txt (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-DebugDylibPath-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-DebugDylibInstallName-normal-x86_64.txt (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-DebugDylibInstallName-normal-x86_64.txt
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-DebugDylibInstallName-normal-arm64.txt (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-DebugDylibInstallName-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/StayCheck\ IQ_const_extract_protocols.json (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/StayCheck\ IQ_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/StayCheck\ IQ.SwiftFileList (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/StayCheck\ IQ.SwiftFileList
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/StayCheck\ IQ.SwiftConstValuesFileList (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/StayCheck\ IQ.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/StayCheck\ IQ.LinkFileList (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/StayCheck\ IQ.LinkFileList
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/StayCheck\ IQ-OutputFileMap.json (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/StayCheck\ IQ-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/StayCheck\ IQ_const_extract_protocols.json (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/StayCheck\ IQ_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/StayCheck\ IQ.SwiftFileList (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/StayCheck\ IQ.SwiftFileList
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/StayCheck\ IQ.SwiftConstValuesFileList (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/StayCheck\ IQ.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/StayCheck\ IQ.LinkFileList (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/StayCheck\ IQ.LinkFileList
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/StayCheck\ IQ-OutputFileMap.json (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/StayCheck\ IQ-OutputFileMap.json
+
+MkDir /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator/StayCheck\ IQ.app (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    /bin/mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator/StayCheck\ IQ.app
+
+Ld /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/Binary/__preview.dylib normal x86_64 (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    /Applications/Xcode_26.4.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target x86_64-apple-ios17.0-simulator -dynamiclib -isysroot /Applications/Xcode_26.4.1.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -O0 -L/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator -F/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator -install_name @rpath/StayCheck\ IQ.debug.dylib -Xlinker -dead_strip -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/StayCheck\ IQ_dependency_info.dat -o /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/Binary/__preview.dylib
+
+Ld /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/Binary/__preview.dylib normal arm64 (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    /Applications/Xcode_26.4.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -dynamiclib -isysroot /Applications/Xcode_26.4.1.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -O0 -L/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator -F/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator -install_name @rpath/StayCheck\ IQ.debug.dylib -Xlinker -dead_strip -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/StayCheck\ IQ_dependency_info.dat -o /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/Binary/__preview.dylib
+
+MkDir /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/assetcatalog_output/unthinned (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    /bin/mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/assetcatalog_output/unthinned
+
+MkDir /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/assetcatalog_output/thinned (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    /bin/mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/assetcatalog_output/thinned
+
+GenerateAssetSymbols /Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ/Resources/Assets.xcassets (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    /Applications/Xcode_26.4.1.app/Contents/Developer/usr/bin/actool /Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ/Resources/Assets.xcassets --compile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator/StayCheck\ IQ.app --output-format human-readable-text --notices --warnings --export-dependency-info /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/assetcatalog_dependencies --output-partial-info-plist /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/assetcatalog_generated_info.plist --app-icon AppIcon --accent-color AccentColor --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --target-device ipad --minimum-deployment-target 17.0 --platform iphonesimulator --bundle-identifier com.staycheckiq.app --generate-swift-asset-symbols /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/DerivedSources/GeneratedAssetSymbols.swift --generate-objc-asset-symbols /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/DerivedSources/GeneratedAssetSymbols.h --generate-asset-symbol-index /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/* com.apple.actool.compilation-results */
+/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck IQ.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck IQ.build/DerivedSources/GeneratedAssetSymbols.h
+/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck IQ.build/DerivedSources/GeneratedAssetSymbols.swift
+
+
+CreateUniversalBinary /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator/StayCheck\ IQ.app/__preview.dylib normal arm64\ x86_64 (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    /Applications/Xcode_26.4.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo -create /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/Binary/__preview.dylib /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/Binary/__preview.dylib -output /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator/StayCheck\ IQ.app/__preview.dylib
+
+CpResource /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator/StayCheck\ IQ.app/PrivacyInfo.xcprivacy /Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ/Resources/PrivacyInfo.xcprivacy (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ/Resources/PrivacyInfo.xcprivacy /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator/StayCheck\ IQ.app
+
+CompileAssetCatalogVariant thinned /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator/StayCheck\ IQ.app /Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ/Resources/Assets.xcassets (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    /Applications/Xcode_26.4.1.app/Contents/Developer/usr/bin/actool /Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ/Resources/Assets.xcassets --compile /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/assetcatalog_generated_info.plist_thinned --app-icon AppIcon --accent-color AccentColor --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --target-device ipad --minimum-deployment-target 17.0 --platform iphonesimulator
+/Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ/Views/StayCheckViews.swift:283:21: error: expected expression
+                    else if MonetizationConfig.isStoreKitEnabled {
+                    ^
+/Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ/Views/StayCheckViews.swift:283:21: error: expected expression
+                    else if MonetizationConfig.isStoreKitEnabled {
+                    ^
+
+SwiftDriver StayCheck\ IQ normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    builtin-SwiftDriver -- /Applications/Xcode_26.4.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name StayCheck_IQ -Onone @/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/StayCheck\ IQ.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.4.1.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -target x86_64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator -F /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64 -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-688ef53f1462e2c8f657fdc38a81448f893e4a944e4cdd9af1f5077e1341bc52.sdkstatcache -output-file-map /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/StayCheck\ IQ-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/StayCheck_IQ.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/StayCheck\ IQ_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-generated-files.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-own-target-headers.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-project-headers.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/DerivedSources-normal/x86_64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/DerivedSources/x86_64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/x86_64/StayCheck_IQ-Swift.h -working-directory /Users/runner/work/StayCheck-IQ/StayCheck-IQ -experimental-emit-module-separately -disable-cmo
+/Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ/Views/StayCheckViews.swift:283:21: error: Expected expression
+                    else if MonetizationConfig.isStoreKitEnabled {
+                    ^ (in target 'StayCheck IQ' from project 'StayCheckIQ')
+
+SwiftDriver StayCheck\ IQ normal arm64 com.apple.xcode.tools.swift.compiler (in target 'StayCheck IQ' from project 'StayCheckIQ')
+    cd /Users/runner/work/StayCheck-IQ/StayCheck-IQ
+    builtin-SwiftDriver -- /Applications/Xcode_26.4.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name StayCheck_IQ -Onone @/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/StayCheck\ IQ.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.4.1.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator -F /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64 -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-688ef53f1462e2c8f657fdc38a81448f893e4a944e4cdd9af1f5077e1341bc52.sdkstatcache -output-file-map /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/StayCheck\ IQ-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/StayCheck_IQ.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/StayCheck\ IQ_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-generated-files.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-own-target-headers.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/StayCheck\ IQ-project-headers.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/DerivedSources/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/Library/Developer/Xcode/DerivedData/StayCheckIQ-dammzvkaexwbnfcudcqwrnjebwss/Build/Intermediates.noindex/StayCheckIQ.build/Debug-iphonesimulator/StayCheck\ IQ.build/Objects-normal/arm64/StayCheck_IQ-Swift.h -working-directory /Users/runner/work/StayCheck-IQ/StayCheck-IQ -experimental-emit-module-separately -disable-cmo
+/Users/runner/work/StayCheck-IQ/StayCheck-IQ/StayCheckIQ/Views/StayCheckViews.swift:283:21: error: Expected expression
+                    else if MonetizationConfig.isStoreKitEnabled {
+                    ^ (in target 'StayCheck IQ' from project 'StayCheckIQ')
+
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftDriver StayCheck\ IQ normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'StayCheck IQ' from project 'StayCheckIQ')
+	SwiftDriver StayCheck\ IQ normal arm64 com.apple.xcode.tools.swift.compiler (in target 'StayCheck IQ' from project 'StayCheckIQ')
+	Building project StayCheckIQ with scheme StayCheck IQ and configuration Debug
+(3 failures)
