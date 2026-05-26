@@ -20,7 +20,6 @@ jobs:
           test -n "${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}"
           test -n "${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}"
           test -n "${{ secrets.APP_STORE_CONNECT_API_PRIVATE_KEY }}"
-          test -n "${{ secrets.APP_REVIEW_CONTACT_PHONE }}"
 
       - name: Ensure placeholder phone is not submitted
         run: |
