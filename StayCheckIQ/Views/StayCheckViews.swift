@@ -278,12 +278,13 @@ struct PropertyListView: View {
                 Button {
                     if canAddProperty {
                         showingEditor = true
+                    } else {
+                        #if STOREKIT_MONETIZATION
+                        if MonetizationConfig.isStoreKitEnabled {
+                            showingPaywall = true
+                        }
+                        #endif
                     }
-                    #if STOREKIT_MONETIZATION
-                    else if MonetizationConfig.isStoreKitEnabled {
-                        showingPaywall = true
-                    }
-                    #endif
                 } label: {
                     Image(systemName: "plus")
                 }
