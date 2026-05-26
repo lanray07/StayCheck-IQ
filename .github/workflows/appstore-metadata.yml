@@ -1,8 +1,6 @@
 name: App Store Metadata Upload
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 jobs:
