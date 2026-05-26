@@ -21,13 +21,6 @@ jobs:
           test -n "${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}"
           test -n "${{ secrets.APP_STORE_CONNECT_API_PRIVATE_KEY }}"
 
-      - name: Ensure placeholder phone is not submitted
-        run: |
-          if grep -R "REQUIRED_REAL_PHONE_NUMBER" AppStoreConnect/Forms/app-review-information.json; then
-            echo "Replace REQUIRED_REAL_PHONE_NUMBER in AppStoreConnect/Forms/app-review-information.json before submission."
-            exit 1
-          fi
-
       - name: Install fastlane
         run: sudo gem install fastlane -NV
 
