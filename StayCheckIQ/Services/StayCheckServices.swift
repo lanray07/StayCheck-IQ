@@ -210,6 +210,7 @@ struct RemoteAIService: AIService {
     }
 }
 
+#if STOREKIT_MONETIZATION
 @MainActor
 final class StoreKitSubscriptionService: ObservableObject {
     static let proMonthlyID = "com.staycheckiq.pro.monthly"
@@ -226,6 +227,10 @@ final class StoreKitSubscriptionService: ObservableObject {
     private var updatesTask: Task<Void, Never>?
 
     var currentPlan: SubscriptionPlan {
+        if !MonetizationConfig.isStoreKitEnabled {
+            return .business
+        }
+
         if purchasedProductIDs.contains(Self.businessMonthlyID) {
             return .business
         }
@@ -240,6 +245,7 @@ final class StoreKitSubscriptionService: ObservableObject {
     }
 
     func startTransactionListener() {
+        guard MonetizationConfig.isStoreKitEnabled else { return }
         guard updatesTask == nil else { return }
         updatesTask = Task {
             for await result in Transaction.updates {
@@ -255,6 +261,13 @@ final class StoreKitSubscriptionService: ObservableObject {
     }
 
     func loadProducts() async {
+        guard MonetizationConfig.isStoreKitEnabled else {
+            products = []
+            purchasedProductIDs = []
+            errorMessage = nil
+            return
+        }
+
         isLoading = true
         defer { isLoading = false }
 
@@ -267,6 +280,8 @@ final class StoreKitSubscriptionService: ObservableObject {
     }
 
     func purchase(_ product: Product) async {
+        guard MonetizationConfig.isStoreKitEnabled else { return }
+
         isLoading = true
         defer { isLoading = false }
 
@@ -288,6 +303,8 @@ final class StoreKitSubscriptionService: ObservableObject {
     }
 
     func restorePurchases() async {
+        guard MonetizationConfig.isStoreKitEnabled else { return }
+
         do {
             try await AppStore.sync()
             await updatePurchasedProducts()
@@ -297,6 +314,8 @@ final class StoreKitSubscriptionService: ObservableObject {
     }
 
     func openManageSubscriptions() async {
+        guard MonetizationConfig.isStoreKitEnabled else { return }
+
         guard let scene = UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene }).first else {
             return
         }
@@ -309,6 +328,11 @@ final class StoreKitSubscriptionService: ObservableObject {
     }
 
     private func updatePurchasedProducts() async {
+        guard MonetizationConfig.isStoreKitEnabled else {
+            purchasedProductIDs = []
+            return
+        }
+
         var ids = Set<String>()
 
         for await result in Transaction.currentEntitlements {
@@ -337,6 +361,32 @@ final class StoreKitSubscriptionService: ObservableObject {
         }
     }
 }
+#else
+@MainActor
+final class StoreKitSubscriptionService: ObservableObject {
+    @Published var products: [Product] = []
+    @Published var isLoading = false
+    @Published var errorMessage: String?
+
+    var currentPlan: SubscriptionPlan { .business }
+    var isActive: Bool { true }
+
+    func startTransactionListener() {
+    }
+
+    func loadProducts() async {
+    }
+
+    func purchase(_ product: Product) async {
+    }
+
+    func restorePurchases() async {
+    }
+
+    func openManageSubscriptions() async {
+    }
+}
+#endif
 
 struct NotificationService {
     private let center = UNUserNotificationCenter.current()

@@ -1,5 +1,5 @@
 {
   "version": "1.0",
   "releaseType": "Manual release after App Review approval",
-  "releaseNotes": "Initial release of StayCheck IQ with property profiles, turnover checklists, photo proof, mock AI room scans, inventory tracking, issue reporting, guest-ready scoring, PDF reports, and StoreKit subscription scaffolding."
+  "releaseNotes": "Initial release of StayCheck IQ with property profiles, turnover checklists, photo proof, mock AI room scans, inventory tracking, issue reporting, guest-ready scoring, and PDF reports."
 }

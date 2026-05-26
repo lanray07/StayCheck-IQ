@@ -138,12 +138,16 @@ struct DashboardView: View {
                             .foregroundStyle(.secondary)
                     }
                     Spacer()
-                    Button {
-                        showingPaywall = true
-                    } label: {
-                        Label(services.subscriptionService.currentPlan.rawValue, systemImage: "crown")
+                    #if STOREKIT_MONETIZATION
+                    if MonetizationConfig.isStoreKitEnabled {
+                        Button {
+                            showingPaywall = true
+                        } label: {
+                            Label(services.subscriptionService.currentPlan.rawValue, systemImage: "crown")
+                        }
+                        .buttonStyle(.bordered)
                     }
-                    .buttonStyle(.bordered)
+                    #endif
                 }
 
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
@@ -162,12 +166,17 @@ struct DashboardView: View {
                     DashboardActionCard(title: "Properties", value: "\(properties.count)", icon: "house.and.flag") {
                         PropertyListView()
                     }
-                    DashboardActionCard(title: "Subscription", value: services.subscriptionService.currentPlan.rawValue, icon: "creditcard") {
-                        SettingsView()
+                    #if STOREKIT_MONETIZATION
+                    if MonetizationConfig.isStoreKitEnabled {
+                        DashboardActionCard(title: "Subscription", value: services.subscriptionService.currentPlan.rawValue, icon: "creditcard") {
+                            SettingsView()
+                        }
                     }
+                    #endif
                 }
 
-                if services.subscriptionService.currentPlan == .free {
+                #if STOREKIT_MONETIZATION
+                if MonetizationConfig.isStoreKitEnabled && services.subscriptionService.currentPlan == .free {
                     UpgradeBanner(
                         title: "Unlock AI scans and PDF exports",
                         message: "Pro adds unlimited checks, AI room scans, inventory reminders, and cleaner reports."
@@ -175,6 +184,7 @@ struct DashboardView: View {
                         showingPaywall = true
                     }
                 }
+                #endif
 
                 SectionHeader(title: "Properties", actionTitle: properties.isEmpty ? nil : "View all") {
                     PropertyListView()
@@ -232,7 +242,8 @@ struct PropertyListView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                if !canAddProperty {
+                #if STOREKIT_MONETIZATION
+                if MonetizationConfig.isStoreKitEnabled && !canAddProperty {
                     UpgradeBanner(
                         title: "Property limit reached",
                         message: "\(services.subscriptionService.currentPlan.rawValue) includes \(PlanPolicy.propertyLimitText(for: services.subscriptionService.currentPlan))."
@@ -240,6 +251,7 @@ struct PropertyListView: View {
                         showingPaywall = true
                     }
                 }
+                #endif
 
                 if properties.isEmpty {
                     EmptyStateView(title: "Add a property", message: "Create a profile with cleaner, check-in, inventory, and report details.", systemImage: "house.badge.plus")
@@ -266,9 +278,12 @@ struct PropertyListView: View {
                 Button {
                     if canAddProperty {
                         showingEditor = true
-                    } else {
+                    }
+                    #if STOREKIT_MONETIZATION
+                    else if MonetizationConfig.isStoreKitEnabled {
                         showingPaywall = true
                     }
+                    #endif
                 } label: {
                     Image(systemName: "plus")
                 }
@@ -476,7 +491,7 @@ struct NewTurnoverCheckView: View {
     }
 
     private var canCreateCheck: Bool {
-        services.subscriptionService.currentPlan != .free || monthlyCheckCount < 5
+        !MonetizationConfig.isStoreKitEnabled || services.subscriptionService.currentPlan != .free || monthlyCheckCount < 5
     }
 
     var body: some View {
@@ -484,7 +499,8 @@ struct NewTurnoverCheckView: View {
             if properties.isEmpty && initialProperty == nil {
                 EmptyStateView(title: "No property available", message: "Add a property before creating a turnover check.", systemImage: "house")
             } else {
-                if !canCreateCheck {
+                #if STOREKIT_MONETIZATION
+                if MonetizationConfig.isStoreKitEnabled && !canCreateCheck {
                     Section {
                         UpgradeBanner(
                             title: "Free check limit reached",
@@ -494,6 +510,7 @@ struct NewTurnoverCheckView: View {
                         }
                     }
                 }
+                #endif
 
                 Section("Property") {
                     Picker("Property", selection: Binding(
@@ -887,7 +904,8 @@ struct AIRoomScanView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            if services.subscriptionService.currentPlan == .free {
+            #if STOREKIT_MONETIZATION
+            if MonetizationConfig.isStoreKitEnabled && services.subscriptionService.currentPlan == .free {
                 UpgradeBanner(
                     title: "AI room scans are a Pro feature",
                     message: "Mock AI remains enabled for local development and product demos."
@@ -895,6 +913,7 @@ struct AIRoomScanView: View {
                     showingPaywall = true
                 }
             }
+            #endif
 
             if photos.isEmpty {
                 EmptyStateView(title: "Add photo proof first", message: "Upload a room photo before running an AI scan.", systemImage: "photo.badge.plus")
@@ -1193,7 +1212,8 @@ struct InventoryListView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
-                if services.subscriptionService.currentPlan == .free {
+                #if STOREKIT_MONETIZATION
+                if MonetizationConfig.isStoreKitEnabled && services.subscriptionService.currentPlan == .free {
                     UpgradeBanner(
                         title: "Inventory reminders are Pro",
                         message: "Track stock locally now, then upgrade for reminder-driven restock workflows."
@@ -1201,6 +1221,7 @@ struct InventoryListView: View {
                         showingPaywall = true
                     }
                 }
+                #endif
 
                 if items.isEmpty {
                     EmptyStateView(title: "No inventory items", message: "Track towels, bedding, consumables, keys, remotes, and kitchen essentials.", systemImage: "shippingbox")
@@ -1250,7 +1271,7 @@ struct InventoryListView: View {
     }
 
     private func scheduleReminder(for item: InventoryItem) async {
-        guard services.subscriptionService.currentPlan != .free else {
+        guard !MonetizationConfig.isStoreKitEnabled || services.subscriptionService.currentPlan != .free else {
             showingPaywall = true
             return
         }
@@ -1357,7 +1378,8 @@ struct ReportGeneratorView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            if services.subscriptionService.currentPlan == .free {
+            #if STOREKIT_MONETIZATION
+            if MonetizationConfig.isStoreKitEnabled && services.subscriptionService.currentPlan == .free {
                 UpgradeBanner(
                     title: "PDF exports are Pro",
                     message: "Mock reports can be generated in development; production exports should be gated by subscription state."
@@ -1365,6 +1387,7 @@ struct ReportGeneratorView: View {
                     showingPaywall = true
                 }
             }
+            #endif
 
             GuestReadyScoreView(assessment: assessment)
 
@@ -1524,26 +1547,35 @@ struct SettingsView: View {
 
     var body: some View {
         Form {
-            Section("Subscription") {
-                HStack {
-                    Label("Current plan", systemImage: "crown")
-                    Spacer()
-                    Text(services.subscriptionService.currentPlan.rawValue)
-                        .foregroundStyle(.secondary)
-                }
+            #if STOREKIT_MONETIZATION
+            if MonetizationConfig.isStoreKitEnabled {
+                Section("Subscription") {
+                    HStack {
+                        Label("Current plan", systemImage: "crown")
+                        Spacer()
+                        Text(services.subscriptionService.currentPlan.rawValue)
+                            .foregroundStyle(.secondary)
+                    }
 
-                Button {
-                    showingPaywall = true
-                } label: {
-                    Label("Manage upgrade", systemImage: "creditcard")
-                }
+                    Button {
+                        showingPaywall = true
+                    } label: {
+                        Label("Manage upgrade", systemImage: "creditcard")
+                    }
 
-                Button {
-                    Task { await services.subscriptionService.openManageSubscriptions() }
-                } label: {
-                    Label("Manage App Store subscription", systemImage: "app.badge")
+                    Button {
+                        Task { await services.subscriptionService.openManageSubscriptions() }
+                    } label: {
+                        Label("Manage App Store subscription", systemImage: "app.badge")
+                    }
                 }
             }
+            #else
+            Section("Access") {
+                Label("All local inspection tools enabled", systemImage: "checkmark.seal")
+                    .foregroundStyle(Color.stayTeal)
+            }
+            #endif
 
             Section("Business profile") {
                 NavigationLink {
@@ -1552,7 +1584,7 @@ struct SettingsView: View {
                     Label("Business profile", systemImage: "building.2")
                 }
                 NavigationLink {
-                    StaticTextView(title: "Report Branding", text: "Custom logo, brand colour, report footer, contact details, and white-label PDF settings are Business plan placeholders.")
+                    StaticTextView(title: "Report Branding", text: "Custom logo, brand colour, report footer, contact details, and white-label PDF settings are ready for future account configuration.")
                 } label: {
                     Label("Report branding", systemImage: "paintpalette")
                 }
@@ -1571,7 +1603,7 @@ struct SettingsView: View {
                 }
 
                 NavigationLink {
-                    StaticTextView(title: "Terms of Use", text: "Add your production terms here, including acceptable use, subscription terms, cancellation, and liability limitations.")
+                    StaticTextView(title: "Terms of Use", text: "Add your production terms here, including acceptable use, account terms, cancellation policies, and liability limitations.")
                 } label: {
                     Label("Terms of use", systemImage: "doc.plaintext")
                 }
@@ -1607,7 +1639,7 @@ struct SettingsView: View {
             }
             Button("Cancel", role: .cancel) { }
         } message: {
-            Text("This removes properties, checks, photos, issues, inventory, reports, and subscription state stored locally on this device.")
+            Text("This removes properties, checks, photos, issues, inventory, reports, and settings stored locally on this device.")
         }
     }
 

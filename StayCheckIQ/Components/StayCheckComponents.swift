@@ -424,6 +424,7 @@ struct PaywallView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
+                    #if STOREKIT_MONETIZATION
                     VStack(alignment: .leading, spacing: 8) {
                         Text("StayCheck IQ Plans")
                             .font(.largeTitle.bold())
@@ -462,20 +463,33 @@ struct PaywallView: View {
                         Label("Restore purchases", systemImage: "arrow.clockwise")
                     }
                     .buttonStyle(.bordered)
+                    #else
+                    EmptyStateView(
+                        title: "Inspection tools enabled",
+                        message: "All turnover checks, AI room scans, inventory reminders, guest-ready scoring, and PDF exports are available in this build.",
+                        systemImage: "checkmark.seal"
+                    )
+                    #endif
                 }
                 .padding()
             }
+            #if STOREKIT_MONETIZATION
             .navigationTitle("Upgrade")
+            #else
+            .navigationTitle("Access")
+            #endif
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Done") { dismiss() }
                 }
             }
+            #if STOREKIT_MONETIZATION
             .task {
                 if subscriptionService.products.isEmpty {
                     await subscriptionService.loadProducts()
                 }
             }
+            #endif
         }
     }
 }
@@ -483,7 +497,7 @@ struct PaywallView: View {
 struct UpgradeBanner: View {
     var title: String
     var message: String
-    var actionTitle = "Upgrade"
+    var actionTitle = "View options"
     var action: () -> Void
 
     var body: some View {
@@ -573,6 +587,7 @@ private struct GuestReadyPill: View {
     }
 }
 
+#if STOREKIT_MONETIZATION
 private struct PlanCard: View {
     let title: String
     let price: String
@@ -637,3 +652,4 @@ private struct PlanCard: View {
         )
     }
 }
+#endif

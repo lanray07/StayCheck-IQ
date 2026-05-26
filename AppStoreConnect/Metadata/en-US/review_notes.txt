@@ -6,9 +6,6 @@ Suggested review flow:
 3. Create a turnover check.
 4. Complete checklist items, add photo proof, run the mock AI room scan, create an issue, update inventory, and generate/share a PDF report.
 
-Subscriptions are scaffolded with StoreKit 2 placeholders:
-- com.staycheckiq.pro.monthly
-- com.staycheckiq.pro.yearly
-- com.staycheckiq.business.monthly
+This build does not present or sell in-app purchases. All turnover inspection features are available locally for review.
 
 The remote AI endpoint is a placeholder and no API keys are stored in the app.

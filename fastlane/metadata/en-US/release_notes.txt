@@ -1,1 +1,1 @@
-Initial release of StayCheck IQ with property profiles, turnover checklists, photo proof, mock AI room scans, inventory tracking, issue reporting, guest-ready scoring, PDF reports, and StoreKit subscription scaffolding.
+Initial release of StayCheck IQ with property profiles, turnover checklists, photo proof, mock AI room scans, inventory tracking, issue reporting, guest-ready scoring, and PDF reports.
