@@ -15,8 +15,7 @@ struct StayCheckIQApp: App {
             RoomPhoto.self,
             StayIssue.self,
             InventoryItem.self,
-            TurnoverReport.self,
-            SubscriptionState.self
+            TurnoverReport.self
         ])
 
         let configuration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
@@ -35,8 +34,6 @@ struct StayCheckIQApp: App {
                 .environmentObject(services)
                 .tint(Color.stayTeal)
                 .task {
-                    services.subscriptionService.startTransactionListener()
-                    await services.subscriptionService.loadProducts()
                     _ = await services.notificationService.requestAuthorization()
                 }
         }

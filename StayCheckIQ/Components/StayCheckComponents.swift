@@ -415,59 +415,6 @@ struct ReportPreviewView: View {
     }
 }
 
-struct PaywallView: View {
-    @ObservedObject var subscriptionService: StoreKitSubscriptionService
-    @Environment(\.dismiss) private var dismiss
-
-    var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 18) {
-                    EmptyStateView(
-                        title: "Inspection tools enabled",
-                        message: "All turnover checks, AI room scans, inventory reminders, guest-ready scoring, and PDF exports are available in this build.",
-                        systemImage: "checkmark.seal"
-                    )
-                }
-                .padding()
-            }
-            .navigationTitle("Access")
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Done") { dismiss() }
-                }
-            }
-        }
-    }
-}
-
-struct UpgradeBanner: View {
-    var title: String
-    var message: String
-    var actionTitle = "View options"
-    var action: () -> Void
-
-    var body: some View {
-        HStack(alignment: .center, spacing: 12) {
-            Image(systemName: "sparkles")
-                .font(.title2)
-                .foregroundStyle(Color.stayTeal)
-            VStack(alignment: .leading, spacing: 3) {
-                Text(title)
-                    .font(.headline)
-                Text(message)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            }
-            Spacer()
-            Button(actionTitle, action: action)
-                .buttonStyle(.borderedProminent)
-        }
-        .padding(14)
-        .background(Color.staySoftTeal, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
-    }
-}
-
 struct EmptyStateView: View {
     var title: String
     var message: String

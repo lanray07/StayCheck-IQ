@@ -111,13 +111,10 @@ struct OnboardingView: View {
 }
 
 struct DashboardView: View {
-    @EnvironmentObject private var services: AppServices
     @Query(sort: \RentalProperty.createdAt, order: .reverse) private var properties: [RentalProperty]
     @Query(sort: \TurnoverCheck.date, order: .reverse) private var checks: [TurnoverCheck]
     @Query(sort: \StayIssue.createdAt, order: .reverse) private var issues: [StayIssue]
     @Query(sort: \TurnoverReport.createdAt, order: .reverse) private var reports: [TurnoverReport]
-
-    @State private var showingPaywall = false
 
     private var todaysChecks: [TurnoverCheck] {
         checks.filter { Calendar.current.isDateInToday($0.date) }
@@ -191,25 +188,16 @@ struct DashboardView: View {
             .padding()
         }
         .navigationTitle("Dashboard")
-        .sheet(isPresented: $showingPaywall) {
-            PaywallView(subscriptionService: services.subscriptionService)
-        }
     }
 }
 
 struct PropertyListView: View {
     @Environment(\.modelContext) private var modelContext
-    @EnvironmentObject private var services: AppServices
     @Query(sort: \RentalProperty.createdAt, order: .reverse) private var properties: [RentalProperty]
     @Query(sort: \TurnoverCheck.date, order: .reverse) private var checks: [TurnoverCheck]
     @Query(sort: \StayIssue.createdAt, order: .reverse) private var issues: [StayIssue]
 
     @State private var showingEditor = false
-    @State private var showingPaywall = false
-
-    private var canAddProperty: Bool {
-        PlanPolicy.canAddProperty(currentCount: properties.count, plan: services.subscriptionService.currentPlan)
-    }
 
     var body: some View {
         ScrollView {
@@ -237,9 +225,7 @@ struct PropertyListView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    if canAddProperty {
-                        showingEditor = true
-                    }
+                    showingEditor = true
                 } label: {
                     Image(systemName: "plus")
                 }
@@ -248,9 +234,6 @@ struct PropertyListView: View {
         }
         .sheet(isPresented: $showingEditor) {
             PropertyEditorView()
-        }
-        .sheet(isPresented: $showingPaywall) {
-            PaywallView(subscriptionService: services.subscriptionService)
         }
     }
 }
@@ -423,12 +406,9 @@ struct NewTurnoverCheckView: View {
 
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
-    @EnvironmentObject private var services: AppServices
     @Query(sort: \RentalProperty.name) private var properties: [RentalProperty]
-    @Query(sort: \TurnoverCheck.date, order: .reverse) private var existingChecks: [TurnoverCheck]
     @StateObject private var viewModel = NewTurnoverViewModel()
     @State private var selectedPropertyId: UUID?
-    @State private var showingPaywall = false
 
     init(property: RentalProperty? = nil) {
         self.initialProperty = property
@@ -440,14 +420,6 @@ struct NewTurnoverCheckView: View {
             return properties.first { $0.id == selectedPropertyId } ?? initialProperty
         }
         return initialProperty ?? properties.first
-    }
-
-    private var monthlyCheckCount: Int {
-        existingChecks.filter { Calendar.current.isDate($0.date, equalTo: Date(), toGranularity: .month) }.count
-    }
-
-    private var canCreateCheck: Bool {
-        !MonetizationConfig.isStoreKitEnabled || services.subscriptionService.currentPlan != .free || monthlyCheckCount < 5
     }
 
     var body: some View {
@@ -478,14 +450,11 @@ struct NewTurnoverCheckView: View {
                     } label: {
                         Label("Create checklist", systemImage: "checklist")
                     }
-                    .disabled(selectedProperty == nil || !canCreateCheck)
+                    .disabled(selectedProperty == nil)
                 }
             }
         }
         .navigationTitle("New Turnover")
-        .sheet(isPresented: $showingPaywall) {
-            PaywallView(subscriptionService: services.subscriptionService)
-        }
     }
 
     private func createCheck() {
@@ -829,7 +798,6 @@ struct AIRoomScanView: View {
     @State private var result: RoomScanResult?
     @State private var isScanning = false
     @State private var errorMessage: String?
-    @State private var showingPaywall = false
 
     init(check: TurnoverCheck, property: RentalProperty?) {
         self.check = check
@@ -917,9 +885,6 @@ struct AIRoomScanView: View {
                     }
                 }
             }
-        }
-        .sheet(isPresented: $showingPaywall) {
-            PaywallView(subscriptionService: services.subscriptionService)
         }
     }
 
@@ -1125,7 +1090,6 @@ struct InventoryListView: View {
     @Query(sort: \RentalProperty.name) private var properties: [RentalProperty]
     @State private var showingEditor = false
     @State private var reminderMessage: String?
-    @State private var showingPaywall = false
 
     init(property: RentalProperty? = nil) {
         self.property = property
@@ -1178,9 +1142,6 @@ struct InventoryListView: View {
                 InventoryEditorView(property: targetProperty)
             }
         }
-        .sheet(isPresented: $showingPaywall) {
-            PaywallView(subscriptionService: services.subscriptionService)
-        }
         .alert("Reminder", isPresented: Binding(
             get: { reminderMessage != nil },
             set: { if !$0 { reminderMessage = nil } }
@@ -1192,11 +1153,6 @@ struct InventoryListView: View {
     }
 
     private func scheduleReminder(for item: InventoryItem) async {
-        guard !MonetizationConfig.isStoreKitEnabled || services.subscriptionService.currentPlan != .free else {
-            showingPaywall = true
-            return
-        }
-
         let granted = await services.notificationService.requestAuthorization()
         guard granted else {
             reminderMessage = "Notifications are not enabled for StayCheck IQ."
@@ -1291,7 +1247,6 @@ struct ReportGeneratorView: View {
     @EnvironmentObject private var services: AppServices
     @StateObject private var viewModel = ReportGenerationViewModel()
     @State private var shareURL: URL?
-    @State private var showingPaywall = false
 
     private var assessment: GuestReadyAssessment {
         GuestReadyCalculator.assess(checklistItems: checklistItems, issues: issues, photos: photos, inventory: inventory)
@@ -1342,9 +1297,6 @@ struct ReportGeneratorView: View {
             if let shareURL {
                 ShareSheet(items: [shareURL])
             }
-        }
-        .sheet(isPresented: $showingPaywall) {
-            PaywallView(subscriptionService: services.subscriptionService)
         }
     }
 
@@ -1449,9 +1401,7 @@ struct ReportsCenterView: View {
 }
 
 struct SettingsView: View {
-    @EnvironmentObject private var services: AppServices
     @Environment(\.modelContext) private var modelContext
-    @State private var showingPaywall = false
     @State private var showingDeleteConfirmation = false
     @State private var deleteMessage: String?
 
@@ -1515,9 +1465,6 @@ struct SettingsView: View {
             }
         }
         .navigationTitle("Settings")
-        .sheet(isPresented: $showingPaywall) {
-            PaywallView(subscriptionService: services.subscriptionService)
-        }
         .alert("Delete all local data?", isPresented: $showingDeleteConfirmation) {
             Button("Delete", role: .destructive) {
                 deleteAllData()
@@ -1537,7 +1484,6 @@ struct SettingsView: View {
             try modelContext.delete(model: StayIssue.self)
             try modelContext.delete(model: InventoryItem.self)
             try modelContext.delete(model: TurnoverReport.self)
-            try modelContext.delete(model: SubscriptionState.self)
             try modelContext.save()
             deleteMessage = "Local data deleted."
         } catch {

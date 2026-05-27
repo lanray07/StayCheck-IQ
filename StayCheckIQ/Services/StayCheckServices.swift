@@ -209,24 +209,6 @@ struct RemoteAIService: AIService {
     }
 }
 
-@MainActor
-final class StoreKitSubscriptionService: ObservableObject {
-    @Published var isLoading = false
-    @Published var errorMessage: String?
-
-    var currentPlan: SubscriptionPlan { .business }
-    var isActive: Bool { true }
-
-    func startTransactionListener() {
-    }
-
-    func loadProducts() async {
-    }
-
-    func openManageSubscriptions() async {
-    }
-}
-
 struct NotificationService {
     private let center = UNUserNotificationCenter.current()
 
@@ -400,7 +382,6 @@ final class AppServices: ObservableObject {
     let remoteAIService = RemoteAIService()
     let pdfService = PDFReportService()
     let notificationService = NotificationService()
-    let subscriptionService = StoreKitSubscriptionService()
 
     init(aiService: any AIService = MockAIService()) {
         self.aiService = aiService

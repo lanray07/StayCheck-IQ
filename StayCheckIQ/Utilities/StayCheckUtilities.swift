@@ -167,42 +167,6 @@ enum GuestReadyCalculator {
     }
 }
 
-enum PlanPolicy {
-    static var isUnlimitedAccessEnabled: Bool {
-        !MonetizationConfig.isStoreKitEnabled
-    }
-
-    static func canAddProperty(currentCount: Int, plan: SubscriptionPlan) -> Bool {
-        if isUnlimitedAccessEnabled {
-            return true
-        }
-
-        switch plan {
-        case .free:
-            return currentCount < 1
-        case .pro:
-            return currentCount < 5
-        case .business:
-            return true
-        }
-    }
-
-    static func propertyLimitText(for plan: SubscriptionPlan) -> String {
-        switch plan {
-        case .free:
-            return "1 property"
-        case .pro:
-            return "Up to 5 properties"
-        case .business:
-            return "Unlimited properties"
-        }
-    }
-}
-
-enum MonetizationConfig {
-    static let isStoreKitEnabled = false
-}
-
 struct ShareSheet: UIViewControllerRepresentable {
     let items: [Any]
 

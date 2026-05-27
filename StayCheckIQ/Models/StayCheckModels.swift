@@ -116,14 +116,6 @@ enum InventoryCategory: String, CaseIterable, Identifiable, Codable {
     var id: String { rawValue }
 }
 
-enum SubscriptionPlan: String, CaseIterable, Identifiable, Codable {
-    case free = "Free"
-    case pro = "Pro"
-    case business = "Business"
-
-    var id: String { rawValue }
-}
-
 enum GuestReadyStatus: String, CaseIterable, Identifiable, Codable {
     case ready = "Ready"
     case needsReview = "Needs Review"
@@ -403,25 +395,5 @@ final class TurnoverReport {
     var pdfURL: URL? {
         guard !pdfLocalPath.isEmpty else { return nil }
         return URL(fileURLWithPath: pdfLocalPath)
-    }
-}
-
-@Model
-final class SubscriptionState {
-    @Attribute(.unique) var id: UUID
-    var plan: String
-    var isActive: Bool
-    var renewsAt: Date?
-
-    init(
-        id: UUID = UUID(),
-        plan: String = SubscriptionPlan.free.rawValue,
-        isActive: Bool = false,
-        renewsAt: Date? = nil
-    ) {
-        self.id = id
-        self.plan = plan
-        self.isActive = isActive
-        self.renewsAt = renewsAt
     }
 }
