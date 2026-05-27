@@ -138,16 +138,6 @@ struct DashboardView: View {
                             .foregroundStyle(.secondary)
                     }
                     Spacer()
-                    #if STOREKIT_MONETIZATION
-                    if MonetizationConfig.isStoreKitEnabled {
-                        Button {
-                            showingPaywall = true
-                        } label: {
-                            Label(services.subscriptionService.currentPlan.rawValue, systemImage: "crown")
-                        }
-                        .buttonStyle(.bordered)
-                    }
-                    #endif
                 }
 
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
@@ -166,25 +156,7 @@ struct DashboardView: View {
                     DashboardActionCard(title: "Properties", value: "\(properties.count)", icon: "house.and.flag") {
                         PropertyListView()
                     }
-                    #if STOREKIT_MONETIZATION
-                    if MonetizationConfig.isStoreKitEnabled {
-                        DashboardActionCard(title: "Subscription", value: services.subscriptionService.currentPlan.rawValue, icon: "creditcard") {
-                            SettingsView()
-                        }
-                    }
-                    #endif
                 }
-
-                #if STOREKIT_MONETIZATION
-                if MonetizationConfig.isStoreKitEnabled && services.subscriptionService.currentPlan == .free {
-                    UpgradeBanner(
-                        title: "Unlock AI scans and PDF exports",
-                        message: "Pro adds unlimited checks, AI room scans, inventory reminders, and cleaner reports."
-                    ) {
-                        showingPaywall = true
-                    }
-                }
-                #endif
 
                 SectionHeader(title: "Properties", actionTitle: properties.isEmpty ? nil : "View all") {
                     PropertyListView()
@@ -242,17 +214,6 @@ struct PropertyListView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                #if STOREKIT_MONETIZATION
-                if MonetizationConfig.isStoreKitEnabled && !canAddProperty {
-                    UpgradeBanner(
-                        title: "Property limit reached",
-                        message: "\(services.subscriptionService.currentPlan.rawValue) includes \(PlanPolicy.propertyLimitText(for: services.subscriptionService.currentPlan))."
-                    ) {
-                        showingPaywall = true
-                    }
-                }
-                #endif
-
                 if properties.isEmpty {
                     EmptyStateView(title: "Add a property", message: "Create a profile with cleaner, check-in, inventory, and report details.", systemImage: "house.badge.plus")
                 } else {
@@ -278,12 +239,6 @@ struct PropertyListView: View {
                 Button {
                     if canAddProperty {
                         showingEditor = true
-                    } else {
-                        #if STOREKIT_MONETIZATION
-                        if MonetizationConfig.isStoreKitEnabled {
-                            showingPaywall = true
-                        }
-                        #endif
                     }
                 } label: {
                     Image(systemName: "plus")
@@ -500,19 +455,6 @@ struct NewTurnoverCheckView: View {
             if properties.isEmpty && initialProperty == nil {
                 EmptyStateView(title: "No property available", message: "Add a property before creating a turnover check.", systemImage: "house")
             } else {
-                #if STOREKIT_MONETIZATION
-                if MonetizationConfig.isStoreKitEnabled && !canCreateCheck {
-                    Section {
-                        UpgradeBanner(
-                            title: "Free check limit reached",
-                            message: "Free includes 5 turnover checks per month. Upgrade for unlimited checks."
-                        ) {
-                            showingPaywall = true
-                        }
-                    }
-                }
-                #endif
-
                 Section("Property") {
                     Picker("Property", selection: Binding(
                         get: { selectedProperty?.id },
@@ -905,17 +847,6 @@ struct AIRoomScanView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            #if STOREKIT_MONETIZATION
-            if MonetizationConfig.isStoreKitEnabled && services.subscriptionService.currentPlan == .free {
-                UpgradeBanner(
-                    title: "AI room scans are a Pro feature",
-                    message: "Mock AI remains enabled for local development and product demos."
-                ) {
-                    showingPaywall = true
-                }
-            }
-            #endif
-
             if photos.isEmpty {
                 EmptyStateView(title: "Add photo proof first", message: "Upload a room photo before running an AI scan.", systemImage: "photo.badge.plus")
             } else {
@@ -1213,17 +1144,6 @@ struct InventoryListView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
-                #if STOREKIT_MONETIZATION
-                if MonetizationConfig.isStoreKitEnabled && services.subscriptionService.currentPlan == .free {
-                    UpgradeBanner(
-                        title: "Inventory reminders are Pro",
-                        message: "Track stock locally now, then upgrade for reminder-driven restock workflows."
-                    ) {
-                        showingPaywall = true
-                    }
-                }
-                #endif
-
                 if items.isEmpty {
                     EmptyStateView(title: "No inventory items", message: "Track towels, bedding, consumables, keys, remotes, and kitchen essentials.", systemImage: "shippingbox")
                 } else {
@@ -1379,17 +1299,6 @@ struct ReportGeneratorView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            #if STOREKIT_MONETIZATION
-            if MonetizationConfig.isStoreKitEnabled && services.subscriptionService.currentPlan == .free {
-                UpgradeBanner(
-                    title: "PDF exports are Pro",
-                    message: "Mock reports can be generated in development; production exports should be gated by subscription state."
-                ) {
-                    showingPaywall = true
-                }
-            }
-            #endif
-
             GuestReadyScoreView(assessment: assessment)
 
             Button {
@@ -1548,35 +1457,10 @@ struct SettingsView: View {
 
     var body: some View {
         Form {
-            #if STOREKIT_MONETIZATION
-            if MonetizationConfig.isStoreKitEnabled {
-                Section("Subscription") {
-                    HStack {
-                        Label("Current plan", systemImage: "crown")
-                        Spacer()
-                        Text(services.subscriptionService.currentPlan.rawValue)
-                            .foregroundStyle(.secondary)
-                    }
-
-                    Button {
-                        showingPaywall = true
-                    } label: {
-                        Label("Manage upgrade", systemImage: "creditcard")
-                    }
-
-                    Button {
-                        Task { await services.subscriptionService.openManageSubscriptions() }
-                    } label: {
-                        Label("Manage App Store subscription", systemImage: "app.badge")
-                    }
-                }
-            }
-            #else
             Section("Access") {
                 Label("All local inspection tools enabled", systemImage: "checkmark.seal")
                     .foregroundStyle(Color.stayTeal)
             }
-            #endif
 
             Section("Business profile") {
                 NavigationLink {

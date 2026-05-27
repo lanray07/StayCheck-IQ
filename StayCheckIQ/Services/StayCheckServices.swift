@@ -1,5 +1,4 @@
 import Foundation
-import StoreKit
 import SwiftUI
 import UIKit
 import UserNotifications
@@ -210,161 +209,8 @@ struct RemoteAIService: AIService {
     }
 }
 
-#if STOREKIT_MONETIZATION
 @MainActor
 final class StoreKitSubscriptionService: ObservableObject {
-    static let proMonthlyID = "com.staycheckiq.pro.monthly"
-    static let proYearlyID = "com.staycheckiq.pro.yearly"
-    static let businessMonthlyID = "com.staycheckiq.business.monthly"
-
-    let productIDs = [proMonthlyID, proYearlyID, businessMonthlyID]
-
-    @Published var products: [Product] = []
-    @Published var purchasedProductIDs: Set<String> = []
-    @Published var isLoading = false
-    @Published var errorMessage: String?
-
-    private var updatesTask: Task<Void, Never>?
-
-    var currentPlan: SubscriptionPlan {
-        if !MonetizationConfig.isStoreKitEnabled {
-            return .business
-        }
-
-        if purchasedProductIDs.contains(Self.businessMonthlyID) {
-            return .business
-        }
-        if purchasedProductIDs.contains(Self.proMonthlyID) || purchasedProductIDs.contains(Self.proYearlyID) {
-            return .pro
-        }
-        return .free
-    }
-
-    var isActive: Bool {
-        currentPlan != .free
-    }
-
-    func startTransactionListener() {
-        guard MonetizationConfig.isStoreKitEnabled else { return }
-        guard updatesTask == nil else { return }
-        updatesTask = Task {
-            for await result in Transaction.updates {
-                do {
-                    let transaction = try checkVerified(result)
-                    await updatePurchasedProducts()
-                    await transaction.finish()
-                } catch {
-                    errorMessage = error.localizedDescription
-                }
-            }
-        }
-    }
-
-    func loadProducts() async {
-        guard MonetizationConfig.isStoreKitEnabled else {
-            products = []
-            purchasedProductIDs = []
-            errorMessage = nil
-            return
-        }
-
-        isLoading = true
-        defer { isLoading = false }
-
-        do {
-            products = try await Product.products(for: productIDs).sorted { $0.price < $1.price }
-            await updatePurchasedProducts()
-        } catch {
-            errorMessage = error.localizedDescription
-        }
-    }
-
-    func purchase(_ product: Product) async {
-        guard MonetizationConfig.isStoreKitEnabled else { return }
-
-        isLoading = true
-        defer { isLoading = false }
-
-        do {
-            let result = try await product.purchase()
-            switch result {
-            case .success(let verification):
-                let transaction = try checkVerified(verification)
-                await updatePurchasedProducts()
-                await transaction.finish()
-            case .userCancelled, .pending:
-                break
-            @unknown default:
-                break
-            }
-        } catch {
-            errorMessage = error.localizedDescription
-        }
-    }
-
-    func restorePurchases() async {
-        guard MonetizationConfig.isStoreKitEnabled else { return }
-
-        do {
-            try await AppStore.sync()
-            await updatePurchasedProducts()
-        } catch {
-            errorMessage = error.localizedDescription
-        }
-    }
-
-    func openManageSubscriptions() async {
-        guard MonetizationConfig.isStoreKitEnabled else { return }
-
-        guard let scene = UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene }).first else {
-            return
-        }
-
-        do {
-            try await AppStore.showManageSubscriptions(in: scene)
-        } catch {
-            errorMessage = error.localizedDescription
-        }
-    }
-
-    private func updatePurchasedProducts() async {
-        guard MonetizationConfig.isStoreKitEnabled else {
-            purchasedProductIDs = []
-            return
-        }
-
-        var ids = Set<String>()
-
-        for await result in Transaction.currentEntitlements {
-            if let transaction = try? checkVerified(result), productIDs.contains(transaction.productID) {
-                ids.insert(transaction.productID)
-            }
-        }
-
-        purchasedProductIDs = ids
-    }
-
-    private func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
-        switch result {
-        case .unverified:
-            throw PurchaseError.failedVerification
-        case .verified(let value):
-            return value
-        }
-    }
-
-    enum PurchaseError: LocalizedError {
-        case failedVerification
-
-        var errorDescription: String? {
-            "StoreKit could not verify this transaction."
-        }
-    }
-}
-#else
-@MainActor
-final class StoreKitSubscriptionService: ObservableObject {
-    @Published var products: [Product] = []
     @Published var isLoading = false
     @Published var errorMessage: String?
 
@@ -377,16 +223,9 @@ final class StoreKitSubscriptionService: ObservableObject {
     func loadProducts() async {
     }
 
-    func purchase(_ product: Product) async {
-    }
-
-    func restorePurchases() async {
-    }
-
     func openManageSubscriptions() async {
     }
 }
-#endif
 
 struct NotificationService {
     private let center = UNUserNotificationCenter.current()

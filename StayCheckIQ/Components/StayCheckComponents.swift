@@ -1,4 +1,3 @@
-import StoreKit
 import SwiftData
 import SwiftUI
 import UIKit
@@ -424,72 +423,20 @@ struct PaywallView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
-                    #if STOREKIT_MONETIZATION
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("StayCheck IQ Plans")
-                            .font(.largeTitle.bold())
-                        Text("Upgrade for AI scans, PDF exports, inventory reminders, cleaner accountability, guest-ready scoring, branding, and multi-property workflows.")
-                            .foregroundStyle(.secondary)
-                    }
-
-                    PlanCard(
-                        title: "Free",
-                        price: "GBP 0",
-                        features: ["1 property", "5 turnover checks/month", "Basic reports", "StayCheck IQ footer"],
-                        isCurrent: subscriptionService.currentPlan == .free
-                    )
-
-                    PlanCard(
-                        title: "Pro",
-                        price: "GBP 19.99 monthly / GBP 149.99 yearly",
-                        features: ["Up to 5 properties", "Unlimited turnover checks", "AI room scans", "PDF exports", "Inventory reminders", "Cleaner checklists"],
-                        productIDs: [StoreKitSubscriptionService.proMonthlyID, StoreKitSubscriptionService.proYearlyID],
-                        subscriptionService: subscriptionService,
-                        isCurrent: subscriptionService.currentPlan == .pro
-                    )
-
-                    PlanCard(
-                        title: "Business",
-                        price: "GBP 79.99 monthly",
-                        features: ["Unlimited properties", "Team workflow placeholder", "Custom branding", "Advanced reports", "Multi-property dashboard"],
-                        productIDs: [StoreKitSubscriptionService.businessMonthlyID],
-                        subscriptionService: subscriptionService,
-                        isCurrent: subscriptionService.currentPlan == .business
-                    )
-
-                    Button {
-                        Task { await subscriptionService.restorePurchases() }
-                    } label: {
-                        Label("Restore purchases", systemImage: "arrow.clockwise")
-                    }
-                    .buttonStyle(.bordered)
-                    #else
                     EmptyStateView(
                         title: "Inspection tools enabled",
                         message: "All turnover checks, AI room scans, inventory reminders, guest-ready scoring, and PDF exports are available in this build.",
                         systemImage: "checkmark.seal"
                     )
-                    #endif
                 }
                 .padding()
             }
-            #if STOREKIT_MONETIZATION
-            .navigationTitle("Upgrade")
-            #else
             .navigationTitle("Access")
-            #endif
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Done") { dismiss() }
                 }
             }
-            #if STOREKIT_MONETIZATION
-            .task {
-                if subscriptionService.products.isEmpty {
-                    await subscriptionService.loadProducts()
-                }
-            }
-            #endif
         }
     }
 }
@@ -586,70 +533,3 @@ private struct GuestReadyPill: View {
         foreground.opacity(0.14)
     }
 }
-
-#if STOREKIT_MONETIZATION
-private struct PlanCard: View {
-    let title: String
-    let price: String
-    let features: [String]
-    var productIDs: [String] = []
-    var subscriptionService: StoreKitSubscriptionService?
-    var isCurrent: Bool
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            HStack {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(title)
-                        .font(.title3.bold())
-                    Text(price)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
-                Spacer()
-                if isCurrent {
-                    GuestReadyPill(text: "Current", status: .ready)
-                }
-            }
-
-            VStack(alignment: .leading, spacing: 8) {
-                ForEach(features, id: \.self) { feature in
-                    Label(feature, systemImage: "checkmark.circle.fill")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
-            }
-
-            if let subscriptionService, productIDs.isNotEmpty {
-                ForEach(productIDs, id: \.self) { id in
-                    if let product = subscriptionService.products.first(where: { $0.id == id }) {
-                        Button {
-                            Task { await subscriptionService.purchase(product) }
-                        } label: {
-                            HStack {
-                                Text("Choose \(product.displayName)")
-                                Spacer()
-                                Text(product.displayPrice)
-                            }
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .disabled(subscriptionService.isLoading)
-                    }
-                }
-
-                if subscriptionService.products.filter({ productIDs.contains($0.id) }).isEmpty {
-                    Text("StoreKit products are scaffolded. Configure product IDs in App Store Connect or a StoreKit configuration file to enable purchases.")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-            }
-        }
-        .padding(16)
-        .background(.background, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
-        .overlay(
-            RoundedRectangle(cornerRadius: 8, style: .continuous)
-                .stroke(isCurrent ? Color.stayTeal : Color.secondary.opacity(0.16), lineWidth: 1)
-        )
-    }
-}
-#endif
